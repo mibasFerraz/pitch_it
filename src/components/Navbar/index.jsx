@@ -19,7 +19,14 @@ const Navbar = () => {
           >
             <li>Home</li>
           </Link>
-          {/* Add more links here if needed */}
+          <Link
+            to="/about"
+            className={`hover:text-blue-800 ${
+              pathname === "/about" && "text-blue-800"
+            }`}
+          >
+            <li>Sobre</li>
+          </Link>
         </ul>
       </div>
     </nav>
