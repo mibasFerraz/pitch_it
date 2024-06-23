@@ -27,6 +27,14 @@ const Navbar = () => {
           >
             <li>Sobre</li>
           </Link>
+          <Link
+            to="/generator"
+            className={`hover:text-blue-800 ${
+              pathname === "/generator" && "text-blue-800"
+            }`}
+          >
+            <li>Gerador de Pitch</li>
+          </Link>
         </ul>
       </div>
     </nav>
