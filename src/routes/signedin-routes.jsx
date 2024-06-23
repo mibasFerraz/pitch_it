@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import SignedInLayout from "../layouts/signedin-layout";
 import About from "../pages/About/About";
+import Generator from "../pages/Generator/Generator";
 
 const signedInRouter = createBrowserRouter([
   {
@@ -10,11 +11,15 @@ const signedInRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Generator />,
       },
       {
         index: "/about",
         element: <About />,
+      },
+      {
+        index: "/generator",
+        element: <Generator />,
       },
       {
         path: "/*",
