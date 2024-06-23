@@ -11,14 +11,14 @@ const signedInRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Generator />,
+        element: <Home />,
       },
       {
-        index: "/about",
+        path: "/about",
         element: <About />,
       },
       {
-        index: "/generator",
+        path: "/generator",
         element: <Generator />,
       },
       {
