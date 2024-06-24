@@ -1,21 +1,25 @@
 import { createBrowserRouter } from "react-router-dom";
+import SignedOffLayout from "../layouts/signedoff-layout";
 import Home from "../pages/Home/Home";
-import SignedInLayout from "../layouts/signedin-layout";
 import About from "../pages/About/About";
-import Generator from "../pages/Generator/Generator";
+import Login from "../pages/Login/Login";
 
-const signedInRouter = createBrowserRouter([
+const signedOffRouter = createBrowserRouter([
   {
     path: "/",
-    element: <SignedInLayout />,
+    element: <SignedOffLayout />,
     children: [
       {
         index: true,
         element: <Home />,
       },
       {
-        path: '/generator',
-        element: <Generator />,
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/*",
@@ -25,4 +29,4 @@ const signedInRouter = createBrowserRouter([
   },
 ]);
 
-export default signedInRouter;
+export default signedOffRouter;
