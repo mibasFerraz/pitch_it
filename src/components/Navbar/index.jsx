@@ -5,7 +5,13 @@ import logo from '/src/assets/logo.svg';
 
 const Navbar = () => {
   const { pathname } = useLocation();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    // window.location.reload();
+    navigate('/');
+  };
 
   return (
     <nav className="grid h-16 grid-cols-12 bg-white shadow-md max-h-16">
@@ -24,6 +30,12 @@ const Navbar = () => {
               >
                 <li>Gerador de Pitch</li>
               </Link>
+              <li
+                className="cursor-pointer hover:text-blue-800"
+                onClick={handleLogout}
+              >
+                Logoff
+              </li>
             </>
           ) : (
             <>
