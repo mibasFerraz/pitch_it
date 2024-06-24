@@ -1,8 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
-import logo from "/src/assets/logo.svg";
+// navbar.jsx
+import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../../context/auth-context';
+import logo from '/src/assets/logo.svg';
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const { isAuthenticated } = useAuth();
 
   return (
     <nav className="grid h-16 grid-cols-12 bg-white shadow-md max-h-16">
@@ -11,30 +14,45 @@ const Navbar = () => {
       </div>
       <div className="col-span-6">
         <ul className="flex items-center justify-center w-full h-full space-x-4 text-md">
-          <Link
-            to="/"
-            className={`hover:text-blue-800 ${
-              pathname === "/" && "text-blue-800"
-            }`}
-          >
-            <li>Home</li>
-          </Link>
-          <Link
-            to="/about"
-            className={`hover:text-blue-800 ${
-              pathname === "/about" && "text-blue-800"
-            }`}
-          >
-            <li>Sobre</li>
-          </Link>
-          <Link
-            to="/generator"
-            className={`hover:text-blue-800 ${
-              pathname === "/generator" && "text-blue-800"
-            }`}
-          >
-            <li>Gerador de Pitch</li>
-          </Link>
+          {isAuthenticated ? (
+            <>
+              <Link
+                to="/generator"
+                className={`hover:text-blue-800 ${
+                  pathname === "/generator" && "text-blue-800"
+                }`}
+              >
+                <li>Gerador de Pitch</li>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/"
+                className={`hover:text-blue-800 ${
+                  pathname === "/" && "text-blue-800"
+                }`}
+              >
+                <li>Home</li>
+              </Link>
+              <Link
+                to="/about"
+                className={`hover:text-blue-800 ${
+                  pathname === "/about" && "text-blue-800"
+                }`}
+              >
+                <li>Sobre</li>
+              </Link>
+              <Link
+                to="/login"
+                className={`hover:text-blue-800 ${
+                  pathname === "/login" && "text-blue-800"
+                }`}
+              >
+                <li>Login</li>
+              </Link>
+            </>
+          )}
         </ul>
       </div>
     </nav>
