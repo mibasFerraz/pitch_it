@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Counter } from "./Counter"; // add the path of your Component
+import { Counter } from "../components/Counter/Counter"; // add the path of your Component
 import "@testing-library/jest-dom";
 import { fireEvent } from "@testing-library/dom";
 
