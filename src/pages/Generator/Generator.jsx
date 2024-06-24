@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Generator = () => {
-  const apiKey = "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";
+  const apiKey = import.meta.env.VITE_CHATGPT_KEY;
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
   const [history, setHistory] = useState([]);
@@ -62,10 +62,10 @@ const Generator = () => {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Descreva sua startup"
           />
-          <div className="flex justify-center mt-2">
+          <div className="flex justify-start p-2 mt-2">
             <button
               id="btn-submit"
-              className="bg-blue-500 text-white p-2 w-1/4 rounded"
+              className="bg-blue-500 text-white w-1/4 rounded"
               onClick={sendMessage}
             >
               Gerar
@@ -76,7 +76,7 @@ const Generator = () => {
               onClick={() => setIsOverlayVisible(true)}
               className="relative"
             >
-              <button className="bg-gray-200 text-black p-2 rounded-full w-10 h-10 flex items-center justify-center">
+              <button className="bg-blue-300 text-white rounded-full w-10 h-10 flex items-center justify-center">
                 ?
               </button>
             </div>

@@ -6,7 +6,7 @@ const Chatbot = () => {
   const [history, setHistory] = useState([]);
   const [minimized, setMinimized] = useState(true); // Start minimized
 
-  const apiKey = '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';
+  const apiKey = import.meta.env.VITE_CHATGPT_KEY;
 
   const sendMessage = () => {
     if (!message.trim()) {
@@ -72,7 +72,7 @@ const Chatbot = () => {
               <input
                 type="text"
                 className="border text-black p-2 w-full rounded"
-                placeholder="Enter your message..."
+                placeholder="Escreva sua mensagem..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
@@ -82,7 +82,7 @@ const Chatbot = () => {
                 className="bg-white text-blue-500 py-2 px-4 rounded hover:bg-blue-200"
                 onClick={sendMessage}
               >
-                Send
+                Enviar
               </button>
             </div>
             {status && <p className="text-white mb-2">{status}</p>}
@@ -90,10 +90,10 @@ const Chatbot = () => {
               {history.map((item, index) => (
                 <div key={index} className="mb-2">
                   <div className="flex justify-end mb-1">
-                    <div className="bg-gray-200 rounded p-2 max-w-xs">{item.message}</div>
+                    <div className="bg-gray-400 rounded p-2 max-w-xs">{item.message}</div>
                   </div>
                   <div className="flex justify-start">
-                    <div className="bg-green-200 rounded p-2 max-w-xs">{item.response}</div>
+                    <div className="bg-green-500 rounded p-2 max-w-xs">{item.response}</div>
                   </div>
                 </div>
               ))}
