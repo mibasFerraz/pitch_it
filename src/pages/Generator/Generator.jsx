@@ -15,8 +15,8 @@ const Generator = () => {
     }
 
     setStatus("Carregando...");
-    
-    const prompt = `Crie um pitch para um vídeo de 5 minutos e detalhe o que falar a cada minuto sobre: ${message}(use quebra de linhas)`;
+
+    const prompt = `Crie um pitch e aborde 10 pontos, colocando 1 minuto de fala a cada 2 pontos e os destacando, sobre: ${message}`;
     setMessage("");
 
     fetch("https://api.openai.com/v1/completions", {
@@ -52,7 +52,7 @@ const Generator = () => {
     }
 
     setStatus("Carregando...");
-    
+
     const prompt = `Crie um elevator pitch sobre: ${message}`;
     setMessage("");
 
@@ -100,25 +100,30 @@ const Generator = () => {
             placeholder="Descreva sua startup"
           />
           <div className="flex justify-start mt-2">
-            <button
-              id="btn-submit"
-              className="bg-blue-500 text-white w-1/4 rounded"
-              onClick={sendMessage}
-            >
-              Elevator Pitch
-            </button>
-            <button
-              id="btn-submit"
-              className="bg-blue-500 text-white w-1/4 rounded"
-              onClick={send5Message}
-            >
-              Pitch vídeo
-            </button>
+            <div className="p-2">
+              <button
+                id="btn-submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded"
+                onClick={sendMessage}
+              >
+                Elevator Pitch
+              </button>
+            </div>
+            <div className="p-2">
+              <button
+                id="btn-submit"
+                className="bg-blue-500 text-white px-4 py-2 rounded"
+                onClick={send5Message}
+              >
+                Pitch vídeo
+              </button>
+            </div>
+
             <div
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               onClick={() => setIsOverlayVisible(true)}
-              className="relative"
+              className="relative p-2"
             >
               <button className="bg-blue-300 text-white rounded-full w-10 h-10 flex items-center justify-center">
                 ?
@@ -152,7 +157,9 @@ const Generator = () => {
             className="bg-white border border-gray-300 rounded-lg shadow-lg p-6 max-w-lg w-full relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-lg font-bold mb-2">Instruções necessárias para um Pitch</h3>
+            <h3 className="text-lg font-bold mb-2">
+              Instruções necessárias para um Pitch
+            </h3>
             <ul className="list-disc pl-5 space-y-1">
               <li>Descreva sua startup em uma frase.</li>
               <li>Explique o problema que você está resolvendo.</li>
@@ -161,7 +168,9 @@ const Generator = () => {
               <li>Descreva seu modelo de negócio.</li>
               <li>Mostre tração e progresso.</li>
               <li>Mencione sua equipe e suas competências.</li>
-              <li>Inclua projeções financeiras e necessidades de financiamento.</li>
+              <li>
+                Inclua projeções financeiras e necessidades de financiamento.
+              </li>
             </ul>
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
