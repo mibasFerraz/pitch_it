@@ -63,6 +63,14 @@ const Navbar = () => {
               >
                 <li>Login</li>
               </Link>
+              <Link
+                to="/signup"
+                className={`hover:text-blue-800 ${
+                  pathname === "/signup" && "text-blue-800"
+                }`}
+              >
+                <li>Cadastre-se</li>
+              </Link>
             </>
           )}
         </ul>
