@@ -1,4 +1,3 @@
-// navbar.jsx
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/auth-context';
 import logo from '/src/assets/logo.svg';
@@ -9,7 +8,6 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    // window.location.reload();
     navigate('/');
   };
 

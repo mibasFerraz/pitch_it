@@ -8,6 +8,43 @@ const Generator = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
 
+  const send5Message = () => {
+    if (!message) {
+      setStatus("Descreva sua StartUp!");
+      return;
+    }
+
+    setStatus("Carregando...");
+    
+    const prompt = `Crie um pitch para um vídeo de 5 minutos e detalhe o que falar a cada minuto sobre: ${message}(use quebra de linhas)`;
+    setMessage("");
+
+    fetch("https://api.openai.com/v1/completions", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo-instruct",
+        prompt: prompt,
+        max_tokens: 2048,
+        temperature: 0.5,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        let r = response.choices[0]["text"];
+        setStatus("");
+        showHistory(message, r);
+      })
+      .catch((e) => {
+        console.error(`Erro -> ${e}`);
+        setStatus("Erro, por favor tente novamente mais tarde.");
+      });
+  };
+
   const sendMessage = () => {
     if (!message) {
       setStatus("Descreva sua StartUp!");
@@ -16,7 +53,7 @@ const Generator = () => {
 
     setStatus("Carregando...");
     
-    const prompt = `Crie um pitch de 5 min sobre: ${message}`;
+    const prompt = `Crie um elevator pitch sobre: ${message}`;
     setMessage("");
 
     fetch("https://api.openai.com/v1/completions", {
@@ -53,7 +90,7 @@ const Generator = () => {
     <div className="container mx-auto p-4">
       <div className="bg-white shadow-lg rounded-lg p-6 max-w-2xl mx-auto relative">
         <h2 className="text-xl font-bold mb-4 text-center">Gerador de Pitch</h2>
-        <div className="mb-4 relative">
+        <div className="mb-4 relative p-2">
           <input
             type="text"
             id="message-input"
@@ -62,13 +99,20 @@ const Generator = () => {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Descreva sua startup"
           />
-          <div className="flex justify-start p-2 mt-2">
+          <div className="flex justify-start mt-2">
             <button
               id="btn-submit"
               className="bg-blue-500 text-white w-1/4 rounded"
               onClick={sendMessage}
             >
-              Gerar
+              Elevator Pitch
+            </button>
+            <button
+              id="btn-submit"
+              className="bg-blue-500 text-white w-1/4 rounded"
+              onClick={send5Message}
+            >
+              Pitch vídeo
             </button>
             <div
               onMouseEnter={() => setIsHovered(true)}
@@ -123,7 +167,7 @@ const Generator = () => {
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsOverlayVisible(false)}
             >
-              X
+              x
             </button>
           </div>
         </div>
