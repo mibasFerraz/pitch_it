@@ -3,6 +3,7 @@ import SignedOffLayout from "../layouts/signedoff-layout";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Login from "../pages/Login/Login";
+import Signup from "../pages/SignUp/SignUp";
 
 const signedOffRouter = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const signedOffRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "/login",
