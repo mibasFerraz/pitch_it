@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitTest version="1">
+    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Counter.test.jsx">
+        <testCase name="Button is present after loading" duration="32"/>
+        <testCase name="Button clicking increments value by 1" duration="16"/>
+    </file>
+</unitTest>
