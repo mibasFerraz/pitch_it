@@ -1,4 +1,3 @@
-// navbar.jsx
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/auth-context';
 import logo from '/src/assets/logo.svg';
@@ -9,7 +8,6 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    // window.location.reload();
     navigate('/');
   };
 
@@ -62,6 +60,14 @@ const Navbar = () => {
                 }`}
               >
                 <li>Login</li>
+              </Link>
+              <Link
+                to="/signup"
+                className={`hover:text-blue-800 ${
+                  pathname === "/signup" && "text-blue-800"
+                }`}
+              >
+                <li>Cadastre-se</li>
               </Link>
             </>
           )}

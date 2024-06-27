@@ -8,7 +8,7 @@ const Home = () => {
       <section className="hero flex justify-center items-center bg-white">
         <div className="w-2/5">
           <h1 className="text-6xl pt-2 font-mono">Pitch It!</h1>
-          <h2 className="text-3xl pt-2">A ferramenta para maximizar o Pitch!</h2>
+          <h2 className="text-3xl pt-2">A ferramenta para maximizar o desafio Liga Jovem.</h2>
           <p className="pt-6">
             A solução ideal para entregar o máximo de valor do seu projeto com um Pitch de alta qualidade!
           </p>
