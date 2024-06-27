@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <unitTest version="1">
-    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Counter.test.jsx">
-        <testCase name="Button is present after loading" duration="10"/>
-        <testCase name="Button clicking increments value by 1" duration="7"/>
+    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/About.test.jsx">
+        <testCase name="About Component should render the heading" duration="66"/>
+        <testCase name="About Component should render the first paragraph" duration="9"/>
+        <testCase name="About Component should render the second paragraph" duration="7"/>
+    </file>
+    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Home.test.jsx">
+        <testCase name="Home Component should render the heading and subheading" duration="73"/>
+        <testCase name="Home Component should render the description paragraph" duration="11"/>
+        <testCase name="Home Component should render the &quot;Saiba Mais!&quot; button" duration="11"/>
+        <testCase name="Home Component should render the image" duration="12"/>
+    </file>
+    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Login.test.jsx">
+        <testCase name="Login Page should render the login page with necessary elements" duration="46"/>
+        <testCase name="Login Page should update email and password fields" duration="28"/>
+    </file>
+    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/SignUp.test.jsx">
+        <testCase name="Signup Component should render the signup page with necessary elements" duration="122"/>
     </file>
 </unitTest>
