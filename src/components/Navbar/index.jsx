@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/auth-context';
-import logo from '/src/assets/logo.svg';
+import logo from '../../assets/logo.svg';
 
 const Navbar = () => {
   const { pathname } = useLocation();

@@ -4,15 +4,23 @@ import "@testing-library/jest-dom";
 import { MemoryRouter } from 'react-router-dom';
 
 describe('Home Component', () => {
-    it('should render the heading and subheading', () => {
+    it('should render the heading', () => {
       const { getByText } = render(
         <MemoryRouter>
           <Home />
         </MemoryRouter>
       );
       expect(getByText('Pitch It!')).toBeInTheDocument();
-      expect(getByText('A ferramenta para maximizar o desafio Liga Jovem.')).toBeInTheDocument();
     });
+
+    it('should render the subheading', () => {
+        const { getByText } = render(
+          <MemoryRouter>
+            <Home />
+          </MemoryRouter>
+        );
+        expect(getByText('A ferramenta para maximizar o desafio Liga Jovem.')).toBeInTheDocument();
+      });
 
     it('should render the description paragraph', () => {
         const { getByText } = render(
