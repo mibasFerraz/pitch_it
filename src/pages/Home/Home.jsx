@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ImgHome from "../../assets/home-image.svg";
 
-const Home = () => {
+export const Home = () => {
   return (
     <>
       <section className="hero flex justify-center items-center bg-white">
