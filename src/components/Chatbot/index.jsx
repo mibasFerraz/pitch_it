@@ -4,7 +4,7 @@ const Chatbot = () => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
   const [history, setHistory] = useState([]);
-  const [minimized, setMinimized] = useState(true); // Start minimized
+  const [minimized, setMinimized] = useState(true);
 
   const apiKey = import.meta.env.VITE_CHATGPT_KEY;
 
@@ -17,7 +17,7 @@ const Chatbot = () => {
     setStatus('Loading...');
     setMessage('');
 
-    fetch("https://api.openai.com/v1/completions", {
+    fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -25,15 +25,17 @@ const Chatbot = () => {
         Authorization: `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'gpt-3.5-turbo-instruct',
-        prompt: message,
-        max_tokens: 2048,
+        model: 'gpt-4o-mini',
+        messages: [
+          { role: 'user', content: message }
+        ],
+        max_tokens: 150,
         temperature: 0.5
       })
     })
       .then(response => response.json())
       .then(response => {
-        const r = response.choices[0].text;
+        const r = response.choices[0].message.content;
         setStatus('');
         showHistory(message, r);
       })

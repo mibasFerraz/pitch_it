@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <unitTest version="1">
     <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Navbar.test.jsx">
-        <testCase name="Navbar Component should render Navbar when user is not authenticated and find Home" duration="104"/>
-        <testCase name="Navbar Component should render Navbar when user is not authenticated and find Sobre" duration="16"/>
-        <testCase name="Navbar Component should render Navbar when user is not authenticated and find Login" duration="14"/>
+        <testCase name="Navbar Component should render Navbar when user is not authenticated and find Home" duration="62"/>
+        <testCase name="Navbar Component should render Navbar when user is not authenticated and find Sobre" duration="10"/>
+        <testCase name="Navbar Component should render Navbar when user is not authenticated and find Login" duration="10"/>
         <testCase name="Navbar Component should render Navbar when user is not authenticated and find Cadastre-se" duration="9"/>
-        <testCase name="Navbar Component should render Navbar when user is authenticated and find Gerador de Pitch" duration="12"/>
-        <testCase name="Navbar Component should render Navbar when user is authenticated and find Logoff" duration="15"/>
+        <testCase name="Navbar Component should render Navbar when user is authenticated and find Gerador de Pitch" duration="21"/>
+        <testCase name="Navbar Component should render Navbar when user is authenticated and find Logoff" duration="7"/>
     </file>
     <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/SignUp.test.jsx">
-        <testCase name="Signup Component Check if the input fields are rendered" duration="127"/>
-        <testCase name="Signup Component Check if the heading is rendered" duration="55"/>
-        <testCase name="Signup Component Check if the signup button is rendered" duration="128"/>
-        <testCase name="Signup Component Check if the error message is not rendered initially" duration="19"/>
-    </file>
-    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/About.test.jsx">
-        <testCase name="About Component should render the heading" duration="20"/>
-        <testCase name="About Component should render the first paragraph" duration="4"/>
-        <testCase name="About Component should render the second paragraph" duration="4"/>
-    </file>
-    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Home.test.jsx">
-        <testCase name="Home Component should render the heading" duration="20"/>
-        <testCase name="Home Component should render the subheading" duration="11"/>
-        <testCase name="Home Component should render the description paragraph" duration="10"/>
-        <testCase name="Home Component should render the &quot;Saiba Mais!&quot; button" duration="9"/>
-        <testCase name="Home Component should render the image" duration="10"/>
+        <testCase name="Signup Component Check if the input fields are rendered" duration="86"/>
+        <testCase name="Signup Component Check if the heading is rendered" duration="24"/>
+        <testCase name="Signup Component Check if the signup button is rendered" duration="150"/>
+        <testCase name="Signup Component Check if the error message is not rendered initially" duration="15"/>
     </file>
     <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Login.test.jsx">
-        <testCase name="Login Page should render the login page with the header" duration="25"/>
-        <testCase name="Login Page should render the login page with email field" duration="10"/>
-        <testCase name="Login Page should render the login page with senha field" duration="8"/>
-        <testCase name="Login Page should render the login page with login text" duration="6"/>
-        <testCase name="Login Page should update email fields" duration="15"/>
-        <testCase name="Login Page should update password fields" duration="8"/>
+        <testCase name="Login Page should render the login page with the header" duration="37"/>
+        <testCase name="Login Page should render the login page with email field" duration="19"/>
+        <testCase name="Login Page should render the login page with senha field" duration="14"/>
+        <testCase name="Login Page should render the login page with login text" duration="11"/>
+        <testCase name="Login Page should update email fields" duration="27"/>
+        <testCase name="Login Page should update password fields" duration="14"/>
+    </file>
+    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/Home.test.jsx">
+        <testCase name="Home Component should render the heading" duration="40"/>
+        <testCase name="Home Component should render the subheading" duration="9"/>
+        <testCase name="Home Component should render the description paragraph" duration="9"/>
+        <testCase name="Home Component should render the &quot;Saiba Mais!&quot; button" duration="9"/>
+        <testCase name="Home Component should render the image" duration="12"/>
+    </file>
+    <file path="/home/lucas/Documents/Eps/pitch_it/src/__tests__/About.test.jsx">
+        <testCase name="About Component should render the heading" duration="36"/>
+        <testCase name="About Component should render the first paragraph" duration="8"/>
+        <testCase name="About Component should render the second paragraph" duration="6"/>
     </file>
 </unitTest>

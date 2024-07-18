@@ -19,7 +19,7 @@ const Generator = () => {
     const prompt = `Crie um pitch e aborde 10 pontos, colocando 1 minuto de fala a cada 2 pontos e os destacando, sobre: ${message}`;
     setMessage("");
 
-    fetch("https://api.openai.com/v1/completions", {
+    fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -27,7 +27,7 @@ const Generator = () => {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo-instruct",
+        model: "gpt-4o-mini",
         prompt: prompt,
         max_tokens: 2048,
         temperature: 0.5,
